@@ -4,8 +4,8 @@
   <title>EnglishWordsPractice</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-  <script type="text/javascript" src="./mdl/material.js"></script>
   <script type="text/javascript" src="./assignment.js"></script>
+  <script type="text/javascript" src="./mdl/material.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="./assignment.css">
   <link rel="stylesheet" href="./mdl/material.css">
@@ -22,7 +22,7 @@
         <div class="mdl-layout-spacer"></div>
         <!-- Navigation. We hide it in small screens. -->
         <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <a class="mdl-navigation__link" href="">Practice</a>
+          <a class="mdl-navigation__link section_1" href="#" onclick="loadSection(1);">Practice</a>
           <a class="mdl-navigation__link" href="">Import</a>
           <a class="mdl-navigation__link" href="">Export</a>
         </nav>
@@ -31,9 +31,9 @@
     <div class="mdl-layout__drawer">
       <span class="mdl-layout-title">ChooseSection</span>
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Section1</a>
-        <a class="mdl-navigation__link" href="">Section2</a>
-        <a class="mdl-navigation__link" href="">Section3</a>
+        <a class="mdl-navigation__link section_1" href="#" onclick="loadSection(1); dFocus();">Section1</a>
+        <a class="mdl-navigation__link section_2" href="#" onclick="loadSection(2); dFocus();">Section2</a>
+        <a class="mdl-navigation__link section_3" href="#" onclick="loadSection(3); dFocus();">Section3</a>
       </nav>
     </div>
     <main class="mdl-layout__content">

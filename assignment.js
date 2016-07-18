@@ -1,8 +1,16 @@
-$(document).ready(function () {
-    $.getJSON("practice_1.json", function(data){
+function loadSection(num) {
+    $.getJSON("practice_" + num + ".json", function(data){
+      $(".mdl-layout__content").empty();
         for(var i in data){
-        $(".mdl-layout__content").append("<div class='e_card mdl-button mdl-js-button mdl-js-ripple-effect'>" + data[i].e_word + "</div>");
-        componentHandler.upgradeDom()
+        $(".mdl-layout__content").append("<div class='e_card mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect'>" + data[i].e_word + "<p>" + data[i].j_word + "</p></div>");
+        componentHandler.upgradeDom();
         }
     });
+  };
+function dFocus(){
+  $('.mdl-layout__obfuscator').trigger("click");
+};
+
+$(document).ready(function(){
+  loadSection(1);
 });

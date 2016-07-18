@@ -2,7 +2,7 @@ main .e_card {
   display: block;
   width: 60%;
   height: 200px;
-  line-height: 200px;
+  line-height: 150px;
   background-color: #dfd;
   text-align: center;
   margin: 100px auto;

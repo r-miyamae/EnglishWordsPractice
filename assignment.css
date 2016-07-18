@@ -2,14 +2,17 @@ main .e_card {
   display: block;
   width: 60%;
   height: 200px;
-  line-height: 150px;
   background-color: #dfd;
-  text-align: center;
   margin: 100px auto;
   padding: 10px;
-  font-size: 500%;
 }
 
 main .e_card:hover{
   background-color: #dfd;
+}
+
+main .e_card p{
+  font-size: 300%;
+  line-height: 100%;
+  text-align: center;
 }

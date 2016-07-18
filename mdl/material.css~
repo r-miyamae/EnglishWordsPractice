@@ -3216,7 +3216,7 @@ ul, ol {
 /* SNACKBAR */
 /* TOOLTIP */
 .mdl-ripple {
-  background: #32cd32;
+  background: rgb(0,0,0);
   border-radius: 50%;
   height: 50px;
   left: 0;

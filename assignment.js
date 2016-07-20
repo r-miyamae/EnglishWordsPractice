@@ -11,8 +11,35 @@ function loadSection(num) {
 
 function createJson(){
   $(".mdl-layout__content").empty();
-  $(".mdl-layout__content").append("<div class='j_form'><p>未実装です</p></div>");
-  componentHandler.upgradeDom();
+  // $(".mdl-layout__content").append("<div class='j_form'><p>未実装です</p></div>");
+  var data = {  //このdataに突っ込んでください♡
+    "a": "aaa",
+    "b": "bbb"
+  };
+  data = JSON.stringify(data);  //objectを文字列に変換する関数
+  var blob = new Blob([data], {type : "text/json"});
+  var file_title;
+ // if(document.querySelector('#textbox_1').value != ''){　//textbox_1に何も入力されていないと実行できないようにするif文
+    file_title = "test" //ここを書き換えることでダウンロードリンクのタイトルが変わる
+// }
+ // if(file_title != undefined){  //ファイルタイトルが何も入力されていなかった場合、実行できなくする
+    if(window.navigator.msSaveBlob){
+      window.navigator.msSaveBlob(blob, file_title);
+      window.navigator.msSaveOrOpenBlob(blob, file_title);
+    }
+    else
+    {
+      window.URL = window.URL || window.webkitURL;
+      var links = document.querySelector('.mdl-navigation');
+      var temp = document.createElement("a");
+      temp.innerHTML = file_title;
+      temp.href = window.URL.createObjectURL(blob);
+      temp.setAttribute("class", "download_link")
+      temp.setAttribute("download", file_title);
+      links.appendChild(temp);
+    }
+
+  // componentHandler.upgradeDom();
 }
 
 function dFocus(){

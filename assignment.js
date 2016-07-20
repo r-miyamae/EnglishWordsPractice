@@ -42,6 +42,24 @@ function createJson(){
   // componentHandler.upgradeDom();
 }
 
+function loadJson() {
+  var inp_file = document.querySelector('#file_1').files[0];  //ファイルフォームのidをここに指定
+  var reader = new FileReader();
+  reader.addEventListener('load',function (e){
+    var file_data = reader.result;
+    file_data = JSON.parse(file_data);
+
+    //オブジェクトを配列に書き換える処理なので、いるなら使ってやってください
+    //file_data = $.map(file_data, function(val, key) { return val; });
+
+    //これでfile_dataにオブジェクトが追加されてるんで、このカッコの中で画面に描画する処理をしてください。
+
+    console.log(file_data); //ほら。読めてるでしょ？
+
+  }, true);
+  reader.readAsText(inp_file);
+}
+
 function dFocus(){
   $('.mdl-layout__obfuscator').trigger("click");
 };

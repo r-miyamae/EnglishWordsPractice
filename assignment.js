@@ -11,7 +11,7 @@ function loadSection(num) {
 
 function createJson(){
   $(".mdl-layout__content").empty();
-  $(".mdl-layout__content").append("<div class='j_form'></div>");
+  $(".mdl-layout__content").append("<div class='j_form'><p>未実装です</p></div>");
   componentHandler.upgradeDom();
 }
 

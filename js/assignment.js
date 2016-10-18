@@ -73,7 +73,7 @@ function createJson(){//Jsonファイルを作成
   // componentHandler.upgradeDom();
 }
 
-function createForm(){
+function createForm(){//Exportフォーム
     $(".mdl-layout__content").empty();
     $(".mdl-layout__content").append('<div class="form">以下に英語とそれの日本語訳を記入し自分のフラッシュカードを作成できます<br>\
                                         <textarea name="japanese" id="japanese" rows="25"></textarea>\

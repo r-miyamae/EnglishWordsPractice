@@ -117,7 +117,7 @@ function dFocus(){
 };
 
 $(document).ready(function(){
-  loadSection('practice_1.json');
+  loadSection('./json/practice_1.json');
 });
 
 $('.e_card').live('click',function(){

@@ -18,17 +18,40 @@ function　createCard(data){//データを直接渡しカードを生成
     }
   }
 
+function splitByLine(text_name) {
+  var text  = document.getElementById(text_name).value.replace(/\r\n|\r/g, "\n");
+  var lines = text.split( '\n' );
+  var outArray = new Array();
+
+  for ( var i = 0; i < lines.length; i++ ) {
+      // 空行は無視する
+      if ( lines[i] == '' ) {
+          continue;
+      }
+      outArray.push( lines[i] );
+  }
+  return outArray;
+}
+
 function createJson(){//Jsonファイルを作成
 
-  var data = {  //このdataに突っ込んでください♡
-    "a": "aaa",
-    "b": "bbb"
-  };
+  var data = [];
+  english_words = splitByLine('english');
+  japanese_words = splitByLine('japanese');
+
+  for(i = 0; i < english_words.length && i < japanese_words.length; i++){
+    data[i] = {"e_word": "",
+                "j_word": ""}
+
+    data[i].e_word = english_words[i];
+    data[i].j_word = japanese_words[i];
+  }
+
   data = JSON.stringify(data);  //objectを文字列に変換する関数
   var blob = new Blob([data], {type : "text/json"});
   var file_title;
  // if(document.querySelector('#textbox_1').value != ''){　//textbox_1に何も入力されていないと実行できないようにするif文
-    file_title = "your_english_words" //ここを書き換えることでダウンロードリンクのタイトルが変わる
+    file_title = "your_english_words.json" //ここを書き換えることでダウンロードリンクのタイトルが変わる
 // }
  // if(file_title != undefined){  //ファイルタイトルが何も入力されていなかった場合、実行できなくする
     if(window.navigator.msSaveBlob){
@@ -52,32 +75,6 @@ function createJson(){//Jsonファイルを作成
 
 function createForm(){
     $(".mdl-layout__content").empty();
-    // var data= '[\
-    //             {\
-    //               "e_word":"respect…" ,\
-    //               "j_word":"…を尊敬する"\
-    //             },\
-    //             {\
-    //                "e_word":"will" ,\
-    //                "j_word":"意思"\
-    //             },\
-    //             {\
-    //               "e_word":"individual" ,\
-    //               "j_word":"個人"\
-    //             },\
-    //             {\
-    //               "e_word":"Take it easy.",\
-    //               "j_word":"気楽にやれ"\
-    //             },\
-    //             {\
-    //               "e_word":"assure A (that) ~",\
-    //               "j_word":"Aに~を確約する"\
-    //             },\
-    //             {\
-    //               "e_word":"turn out (to be)…",\
-    //               "j_word":"…という結果になる"\
-    //             }\
-    //           ]'
     $(".mdl-layout__content").append('<div class="form">以下に英語とそれの日本語訳を記入し自分のフラッシュカードを作成できます<br>\
                                         <textarea name="japanese" id="japanese" rows="25"></textarea>\
                                         <textarea name="english" id="english" rows="25"></textarea>\

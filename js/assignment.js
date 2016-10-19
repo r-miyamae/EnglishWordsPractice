@@ -51,35 +51,38 @@ function createJson(){//Jsonファイルを作成
   var blob = new Blob([data], {type : "text/json"});
   var file_title;
  // if(document.querySelector('#textbox_1').value != ''){　//textbox_1に何も入力されていないと実行できないようにするif文
-    file_title = "your_english_words.json" //ここを書き換えることでダウンロードリンクのタイトルが変わる
+  file_title = document.getElementById("title").value + ".json"; //ここを書き換えることでダウンロードリンクのタイトルが変わる
 // }
- // if(file_title != undefined){  //ファイルタイトルが何も入力されていなかった場合、実行できなくする
-    if(window.navigator.msSaveBlob){
-      window.navigator.msSaveBlob(blob, file_title);
-      window.navigator.msSaveOrOpenBlob(blob, file_title);
-    }
-    else
-    {
-      window.URL = window.URL || window.webkitURL;
-      var links = document.querySelector(".form");
-      var temp = document.createElement("a");
-      temp.innerHTML = file_title;
-      temp.href = window.URL.createObjectURL(blob);
-      temp.setAttribute("class", "download_link");
-      temp.setAttribute("download", file_title);
-      links.appendChild(temp);
-    }
-
+ if(file_title == ".json"){
+   file_title = "your_english_words.json"
+ }
+  if(window.navigator.msSaveBlob){
+    window.navigator.msSaveBlob(blob, file_title);
+    window.navigator.msSaveOrOpenBlob(blob, file_title);
+  }
+  else
+  {
+    window.URL = window.URL || window.webkitURL;
+    var links = document.querySelector(".form");
+    var temp = document.createElement("a");
+    temp.innerHTML = file_title;
+    temp.href = window.URL.createObjectURL(blob);
+    temp.setAttribute("class", "download_link");
+    temp.setAttribute("download", file_title);
+    links.appendChild(temp);
+  }
   // componentHandler.upgradeDom();
 }
 
 function createForm(){//Exportフォーム
     $(".mdl-layout__content").empty();
     $(".mdl-layout__content").append('<div class="form">以下に英語とそれの日本語訳を記入し自分のフラッシュカードを作成できます<br>\
-                                        <textarea name="japanese" id="japanese" rows="25"></textarea>\
-                                        <textarea name="english" id="english" rows="25"></textarea>\
+                                        保存するタイトル名：<input type="text" id="title" name="title">\
                                         </br>\
-                                        <a href="#" onClick=createJson()>ダウンロードリンクの生成</button></div>');
+                                        <textarea name="english" id="english" rows="25" cols="30"></textarea>\
+                                        <textarea name="japanese" id="japanese" rows="25" cols="30"></textarea>\
+                                        </br>\
+                                        <a href="#" onClick=createJson()>ダウンロードリンクの生成</br></div>');
     componentHandler.upgradeDom();
 }
 

@@ -7,7 +7,7 @@ main .e_card {
   width: 40%;
   height: 200px;
   background-color: #dfd;
-  margin: 70px 40px 30px 40px;
+  margin: 70px 3% 30px 3%;
   float: left;
 }
 
@@ -74,6 +74,6 @@ form textarea{
 
 @media(max-width:500px){
   main .e_card{
-    margin: 70px 20px 0 20px;
+    margin: 45px 20px 25px 20px;
   }
 }

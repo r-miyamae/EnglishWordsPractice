@@ -89,7 +89,7 @@ function createForm(){//Exportフォーム
 
 function chooseJson() {
   $(".mdl-layout__content").empty();
-  $(".mdl-layout__content").append('<div class="form"><input type="file" name="name" value="" id="file_1">\
+  $(".mdl-layout__content").append('<div class="form"><input type="file" name="name" value="" id="file_1"></br>\
                                     <a href="#" onClick="loadJson();">決定</a></div>');
   componentHandler.upgradeDom();
 }

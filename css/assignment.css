@@ -1,79 +1,75 @@
-html{
-  background-color: #f5f5f5;
+html {
+    background-color: #f5f5f5;
 }
 
 main .e_card {
-  display: block;
-  width: 40%;
-  height: 200px;
-  background-color: #dfd;
-  margin: 70px 3% 30px 3%;
-  float: left;
+    display: block;
+    width: 40%;
+    height: 200px;
+    background-color: #dfd;
+    margin: 70px 3% 30px 3%;
+    float: left;
 }
 
-main .e_card:hover{
-  background-color: #dfd;
+main .e_card:hover {
+    background-color: #dfd;
 }
 
-.e_w{
-  font-size: 300%;
-  line-height: 1.5;
-  text-align: center;
-  padding-top: 25px;
-}
-
-.j_w{
-  font-size: 200%;
-  color: #ff4500;
-  display: none;
-}
-
-.j_form{
-  display: block;
-  width:50%;
-  height:300px;
-  background-color: #dfd;
-  margin: 80px auto;
-  text-align: center;
-}
-
-.j_form p{
-  padding-top: 130px;
-}
-
-.form, form{
-  text-align: center;
-  margin: 80px 200px;
-  background-color: lightgreen;
-}
-
-.download_link{
-  background-color: orange;
-}
-
-form textarea{
-  height: 100%;
-  width: 60%;
-}
-
-@media(max-width:1140px){
-  main .e_card{
-    margin: 90px auto 0 40px;
-  }
-}
-
-@media(max-width:800px){
-  main .e_card{
-    margin: 80px 30px 0 40px;
-    width: 80%;
-  }
-  .e_w{
+.e_w {
+    font-size: 300%;
+    line-height: 1.5;
+    text-align: center;
     padding-top: 25px;
-  }
 }
 
-@media(max-width:500px){
-  main .e_card{
-    margin: 45px 20px 25px 20px;
-  }
+.j_w {
+    font-size: 200%;
+    color: #ff4500;
+    display: none;
+}
+
+.form, form {
+    text-align: center;
+    margin: 80px 200px;
+    background-color: lightgreen;
+    padding: 15px;
+}
+
+form textarea {
+    height: 100%;
+    width: 60
+}
+
+#english, #japanese, #title {
+    background-color: white;
+}
+
+.file input{
+  display:none;
+}
+
+.file div{
+  cursor: pointer;
+}
+
+@media(max-width:1140px) {
+    main .e_card {
+        margin: 90px auto 0 40px;
+    }
+}
+
+@media(max-width:800px) {
+    main .e_card {
+        margin: 80px 30px 0 40px;
+        width: 80%;
+    }
+    .e_w {
+        padding-top: 25px;
+    }
+}
+
+@media(max-width:500px) {
+    main .e_card {
+        margin: 45px 20px 25px 20px;
+    }
 }

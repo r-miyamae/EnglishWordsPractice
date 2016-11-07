@@ -71,6 +71,6 @@ form textarea {
 @media(max-width:500px) {
     main .e_card {
         margin: 45px 20px 25px 20px;
-        font-size: 70%;
+        font-size: 80%;
     }
 }

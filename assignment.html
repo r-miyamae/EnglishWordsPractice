@@ -27,22 +27,30 @@
     <div class="mdl-layout__drawer">
       <span class="mdl-layout-title">ChooseCards</span>
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link section_1" href="#" onclick="loadSection('./json/practice_1.json'); dFocus();">Section1</a>
-        <a class="mdl-navigation__link section_2" href="#" onclick="loadSection('./json/practice_2.json'); dFocus();">Section2</a>
-        <a class="mdl-navigation__link section_3" href="#" onclick="loadSection('./json/practice_3.json'); dFocus();">Section3</a>
-        <a class="mdl-navigation__link Sheet_1" href="#" onclick="loadSection('./json/sheet_1.json'); dFocus();">Sheet_#1</a>
-        <a class="mdl-navigation__link Sheet_2" href="#" onclick="loadSection('./json/sheet_2.json'); dFocus();">Sheet_#2</a>
-        <a class="mdl-navigation__link Sheet_3" href="#" onclick="loadSection('./json/sheet_3.json'); dFocus();">Sheet_#3</a>
-        <a class="mdl-navigation__link Sheet_4" href="#" onclick="loadSection('./json/sheet_4.json'); dFocus();">Sheet_#4</a>
-        <a class="mdl-navigation__link Sheet_5" href="#" onclick="loadSection('./json/sheet_5.json'); dFocus();">Sheet_#5</a>
-        <a class="mdl-navigation__link Sheet_6" href="#" onclick="loadSection('./json/sheet_6.json'); dFocus();">Sheet_#6</a>
-        <a class="mdl-navigation__link Sheet_7" href="#" onclick="loadSection('./json/sheet_7.json'); dFocus();">Sheet_#7</a>
-        <a class="mdl-navigation__link Sheet_8" href="#" onclick="loadSection('./json/sheet_8.json'); dFocus();">Sheet_#8</a>
-        <a class="mdl-navigation__link Sheet_9" href="#" onclick="loadSection('./json/sheet_9.json'); dFocus();">Sheet_#9</a>
-        <a class="mdl-navigation__link Sheet_10" href="#" onclick="loadSection('./json/sheet_10.json'); dFocus();">Sheet_#10</a>
-        <a class="mdl-navigation__link Sheet_11" href="#" onclick="loadSection('./json/sheet_11.json'); dFocus();">Sheet_#11</a>
-
-
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="duo_words">
+          Duo3.0
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="duo_words">
+          <a class="mdl-navigation__link" href="#" onclick="loadSection('./json/practice_1.json'); dFocus();">Section1</a>
+          <a class="mdl-navigation__link" href="#" onclick="loadSection('./json/practice_2.json'); dFocus();">Section2</a>
+          <a class="mdl-navigation__link" href="#" onclick="loadSection('./json/practice_3.json'); dFocus();">Section3</a>
+        </ul>
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="sheet_words">
+          西山裕二
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="sheet_words">
+          <a class="mdl-navigation__link" href="#" onclick="loadSection('./json/sheet_1.json'); dFocus();">Sheet_#1</a>
+          <a class="mdl-navigation__link" href="#" onclick="loadSection('./json/sheet_2.json'); dFocus();">Sheet_#2</a>
+          <a class="mdl-navigation__link" href="#" onclick="loadSection('./json/sheet_3.json'); dFocus();">Sheet_#3</a>
+          <a class="mdl-navigation__link" href="#" onclick="loadSection('./json/sheet_4.json'); dFocus();">Sheet_#4</a>
+          <a class="mdl-navigation__link" href="#" onclick="loadSection('./json/sheet_5.json'); dFocus();">Sheet_#5</a>
+          <a class="mdl-navigation__link" href="#" onclick="loadSection('./json/sheet_6.json'); dFocus();">Sheet_#6</a>
+          <a class="mdl-navigation__link" href="#" onclick="loadSection('./json/sheet_7.json'); dFocus();">Sheet_#7</a>
+          <a class="mdl-navigation__link" href="#" onclick="loadSection('./json/sheet_8.json'); dFocus();">Sheet_#8</a>
+          <a class="mdl-navigation__link" href="#" onclick="loadSection('./json/sheet_9.json'); dFocus();">Sheet_#9</a>
+          <a class="mdl-navigation__link" href="#" onclick="loadSection('./json/sheet_10.json'); dFocus();">Sheet_#10</a>
+          <a class="mdl-navigation__link" href="#" onclick="loadSection('./json/sheet_11.json'); dFocus();">Sheet_#11</a>
+        </ul>
       </nav>
     </div>
     <main class="mdl-layout__content">

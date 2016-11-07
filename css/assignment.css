@@ -30,14 +30,14 @@ main .e_card:hover {
 
 .form, form {
     text-align: center;
-    margin: 80px 200px;
+    margin: 5% 10%;
     background-color: lightgreen;
     padding: 15px;
 }
 
 form textarea {
     height: 100%;
-    width: 60
+    width: 60%;
 }
 
 #english, #japanese, #title {
@@ -71,5 +71,6 @@ form textarea {
 @media(max-width:500px) {
     main .e_card {
         margin: 45px 20px 25px 20px;
+        font-size: 70%;
     }
 }

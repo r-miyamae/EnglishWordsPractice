@@ -40,7 +40,7 @@ form textarea {
     width: 60%;
 }
 
-#english, #japanese, #title {
+.linedwrap, #title {
     background-color: white;
 }
 

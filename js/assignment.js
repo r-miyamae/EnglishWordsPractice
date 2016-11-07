@@ -83,20 +83,26 @@ function createForm() { //Exportフォーム
                                         <div class="mdl-textfield mdl-js-textfield">\
                                           <input class="mdl-textfield__input" type="text" id="title">\
                                           <label class="mdl-textfield__label" for="title">保存するタイトル名</label>\
-                                          </div></br>\
-                                          <div class="mdl-textfield mdl-js-textfield">\
-                                            <textarea class="mdl-textfield__input" type="text" rows="25" id="english"></textarea>\
-                                            <label class="mdl-textfield__label" for="english">please write English here...</label>\
-                                          </div>\
-                                          <div class="mdl-textfield mdl-js-textfield">\
-                                            <textarea class="mdl-textfield__input" type="text" rows="25" id="japanese"></textarea>\
-                                            <label class="mdl-textfield__label" for="japaese">please write Japanese here...</label>\
-                                          </div>\
-                                        </br>\
-                                        <input type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" onClick=createJson() value=ダウンロードリンクの生成></br></br></br></div>');
+                                        </div></br>\
+                                        <div class="mdl-textfield mdl-js-textfield">\
+                                          <textarea class="mdl-textfield__input lined" type="text" rows="25" id="english"></textarea>\
+                                          <label class="mdl-textfield__label" for="english">______ please write English here...</label>\
+                                        </div>\
+                                        <div class="mdl-textfield mdl-js-textfield">\
+                                          <textarea class="mdl-textfield__input lined" type="text" rows="25" id="japanese"></textarea>\
+                                          <label class="mdl-textfield__label" for="japaese">______ please write Japanese here...</label>\
+                                        </div></br>\
+                                        <input type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" onClick=createJson() value=ダウンロードリンクの生成></br></br></br>\
+                                      </div>');
+    componentHandler.upgradeDom();
+
+    $(function() {//テキストエリアに行番号とハイライトの追加
+    	$(".lined").linedtextarea(
+    		{selectedLine: 10}
+    	);
+    });
     componentHandler.upgradeDom();
 }
-
 
 function chooseJson() {
     $(".mdl-layout__content").empty();

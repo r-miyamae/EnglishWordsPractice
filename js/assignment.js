@@ -86,11 +86,11 @@ function createForm() { //Exportフォーム
                                         </div></br>\
                                         <div class="mdl-textfield mdl-js-textfield">\
                                           <textarea class="mdl-textfield__input lined" type="text" rows="25" id="english"></textarea>\
-                                          <label class="mdl-textfield__label" for="english">______ please write English here...</label>\
+                                          <label class="mdl-textfield__label" for="english">_______ please write English here...</label>\
                                         </div>\
                                         <div class="mdl-textfield mdl-js-textfield">\
                                           <textarea class="mdl-textfield__input lined" type="text" rows="25" id="japanese"></textarea>\
-                                          <label class="mdl-textfield__label" for="japaese">______ please write Japanese here...</label>\
+                                          <label class="mdl-textfield__label" for="japaese">_______ please write Japanese here...</label>\
                                         </div></br>\
                                         <input type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" onClick=createJson() value=ダウンロードリンクの生成></br></br></br>\
                                       </div>');
@@ -98,10 +98,8 @@ function createForm() { //Exportフォーム
 
     $(function() {//テキストエリアに行番号とハイライトの追加
     	$(".lined").linedtextarea(
-    		{selectedLine: 10}
     	);
     });
-    componentHandler.upgradeDom();
 }
 
 function chooseJson() {

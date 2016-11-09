@@ -1,15 +1,4 @@
-function loadSection(name) { //jsonファイルを基にカードを生成
-    $.getJSON(name, function　 createCard(data) {
-        $(".mdl-layout__content").empty();
-        for (var i in data) {
-            $(".mdl-layout__content").append("<div class='e_card mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect'><p class='e_w'>" +
-                data[i].e_word + "</p><p class='j_w'>" + data[i].j_word + "</p></div>");
-            componentHandler.upgradeDom();
-        }
-    });
-}
-
-function　 createCard(data) { //データを直接渡しカードを生成
+function createCard(data) { //データを受け取りカードを生成
     $(".mdl-layout__content").empty();
     for (var i in data) {
         $(".mdl-layout__content").append("<div class='e_card mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect'><p class='e_w'>" +
@@ -18,7 +7,29 @@ function　 createCard(data) { //データを直接渡しカードを生成
     }
 }
 
-function splitByLine(text_name) {
+function loadSection(name) { //jsonファイルの名前を基にデータを作る
+  httpObj = new XMLHttpRequest();
+    httpObj.open("get", name, true);
+    httpObj.onload = function(){
+      file_data = JSON.parse(this.responseText);
+      createCard(file_data);
+    }
+    httpObj.send(null);
+}
+
+function shuffleFileCards(){ //カードのシャッフル
+  var n = file_data.length, t, i;
+
+  while (n) {
+    i = Math.floor(Math.random() * n--);
+    t = file_data[n];
+    file_data[n] = file_data[i];
+    file_data[i] = t;
+  }
+  createCard(file_data);
+}
+
+function splitByLine(text_name) { //exportフォームの入力値を改行で分ける
     var text = document.getElementById(text_name).value.replace(/\r\n|\r/g, "\n");
     var lines = text.split('\n');
     var outArray = new Array();
@@ -33,9 +44,8 @@ function splitByLine(text_name) {
     return outArray;
 }
 
-function createJson() { //Jsonファイルを作成
-
-    var data = [];
+function createJson() { //exportフォームでJsonファイルを作成
+  var data = new Array();
     english_words = splitByLine('english');
     japanese_words = splitByLine('japanese');
 
@@ -96,7 +106,7 @@ function createForm() { //Exportフォーム
                                       </div>');
     componentHandler.upgradeDom();
 
-    $(function() {//テキストエリアに行番号とハイライトの追加
+    $(function() { //テキストエリアに行番号とハイライトの追加
     	$(".lined").linedtextarea(
     	);
     });
@@ -113,21 +123,18 @@ function chooseJson() {
                                       </div>');
     componentHandler.upgradeDom();
 }
-
+file_data = ""; //グローバル変数
 function loadJson() {
     var inp_file = document.querySelector('#file').files[0]; //ファイルフォームのidをここに指定
     var reader = new FileReader();
     reader.addEventListener('load', function(e) {
-        var file_data = reader.result;
+        file_data = reader.result;
         file_data = JSON.parse(file_data);
         createCard(file_data);
         //オブジェクトを配列に書き換える処理なので、いるなら使ってやってください
         // file_data = $.map(file_data, function(val, key) { return val; });
-
         //これでfile_dataにオブジェクトが追加されてるんで、このカッコの中で画面に描画する処理をしてください。
-
         // console.log(file_data); //ほら。読めてるでしょ？
-
     }, true);
     reader.readAsText(inp_file);
 }

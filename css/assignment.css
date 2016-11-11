@@ -2,6 +2,10 @@ html {
     background-color: #f5f5f5;
 }
 
+#small_title{
+  display: none;
+}
+
 main .e_card {
     display: block;
     width: 40%;
@@ -72,5 +76,13 @@ form textarea {
     main .e_card {
         margin: 45px 20px 25px 20px;
         font-size: 80%;
+    }
+
+    #big_title{
+      display: none;
+    }
+
+    #small_title{
+      display: block;
     }
 }

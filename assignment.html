@@ -19,7 +19,8 @@
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">MyFlashCards</span>
+        <span class="mdl-layout-title" id="small_title">MFC</span>
+        <span class="mdl-layout-title" id="big_title">MyFlashCards</span>
         <div class="mdl-layout-spacer"></div>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="#" onclick="shuffleFileCards();">
@@ -66,7 +67,10 @@
           Idioms
         </button>
         <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="idiom_words">
+          <a class="mdl-navigation__link" href="#" onclick="loadSection('./json/41~80.json'); dFocus();">41~80</a>
           <a class="mdl-navigation__link" href="#" onclick="loadSection('./json/301~340.json'); dFocus();">301~340</a>
+          <a class="mdl-navigation__link" href="#" onclick="loadSection('./json/341~380.json'); dFocus();">341~380</a>
+          <a class="mdl-navigation__link" href="#" onclick="loadSection('./json/381~420.json'); dFocus();">381~420</a>
         </ul>
       </nav>
     </div>

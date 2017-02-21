@@ -2,7 +2,7 @@ function createCard(data) { //データを受け取りカードを生成
     $(".mdl-layout__content").empty();
     for (var i in data) {
         $(".mdl-layout__content").append("<div class='e_card mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect'><p class='e_w'>" +
-            data[i].e_word + "</p><p class='j_w'>" + data[i].j_word + "</p></div>");
+            data[i].English + "</p><p class='j_w'>" + data[i].Japanese + "</p></div>");
         componentHandler.upgradeDom();
     }
 }
@@ -47,16 +47,16 @@ function splitByLine(text_name) { //exportフォームの入力値を改行で�
 function createJson() { //exportフォームでJsonファイルを作成
   var data = new Array();
     english_words = splitByLine('english');
-    japanese_words = splitByLine('japanese');
+    japanesEnglishs = splitByLine('japanese');
 
-    for (i = 0; i < english_words.length && i < japanese_words.length; i++) {
+    for (i = 0; i < english_words.length && i < japanesEnglishs.length; i++) {
         data[i] = {
-            "e_word": "",
-            "j_word": ""
+            "English": "",
+            "Japanese": ""
         }
 
-        data[i].e_word = english_words[i];
-        data[i].j_word = japanese_words[i];
+        data[i].English = english_words[i];
+        data[i].Japanese = japanesEnglishs[i];
     }
 
     data = JSON.stringify(data); //objectを文字列に変換する関数
